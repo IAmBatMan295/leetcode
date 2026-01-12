@@ -1,0 +1,33 @@
+# --- CMake build directories ---
+build/
+cmake-build-*/
+
+# --- CMake generated files ---
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+*.cmake.user
+
+# --- Binaries ---
+*.out
+*.exe
+*.app
+
+# --- Object / temp files ---
+*.o
+*.obj
+*.a
+*.so
+*.dll
+*.dylib
+
+# --- Editor / OS junk ---
+.vscode/
+.idea/
+.DS_Store
+
+# --- Language server caches ---
+.cache/
