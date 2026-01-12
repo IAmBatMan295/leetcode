@@ -5,7 +5,10 @@ int toh(int n, char s, char a, char d) {
     std::cout << s << "->" << d << std::endl;
     return 1;
   }
-  return toh(n - 1, s, d, a) + toh(1, s, a, d) + toh(n - 1, a, s, d);
+  int x = toh(n - 1, s, d, a);
+  std::cout << s << "->" << d << std::endl;
+  int y = toh(n - 1, a, s, d);
+  return x + y + 1;
 }
 int main() {
 
