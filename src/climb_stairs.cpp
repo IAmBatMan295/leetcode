@@ -1,8 +1,14 @@
+
+// This is simply solved by fibonacci series.
+
 #include <iostream>
 
 int climbstairs(int n) {
 
   int sum = 0, t0 = 0, t1 = 1;
+
+  // the zeroth  term is 0 and the first term is 1.
+
   for (int i = 1; i <= n; i++) {
     sum = t0 + t1;
     t0 = t1;
