@@ -1,6 +1,6 @@
 #include <iostream>
 
-int toh(int n, char src, char aux, char dest) {
+int toh(int n, char &src, char &aux, char &dest) {
   if (n == 1) {
     std::cout << src << "->" << dest << std::endl;
 
@@ -30,10 +30,11 @@ int toh(int n, char src, char aux, char dest) {
 int main() {
 
   int n;
+  char source = 's', auxiliary = 'a', destination = 'd';
   std::cout << "\nEnter the no of disks: ";
   std::cin >> n;
   std::cout << "The operations are:\n";
-  int sum = toh(n, 's', 'a', 'd');
+  int sum = toh(n, source, auxiliary, destination);
   std::cout << "\nTotal no of steps= " << sum << std::endl;
 
   return 0;

@@ -5,10 +5,13 @@ int romanToInt(string s) {
   int j = s.length() - 1, sum = 0;
   while (j >= 0) {
     if (j != 0) {
-      if (s[j] == 'I') {
+      switch (s[j]) {
+      case 'I': {
         sum++;
         j--;
-      } else if (s[j] == 'V') {
+        break;
+      }
+      case 'V': {
         if (s[j - 1] == 'I') {
           sum += 4;
           j -= 2;
@@ -16,7 +19,9 @@ int romanToInt(string s) {
           sum += 5;
           j--;
         }
-      } else if (s[j] == 'X') {
+        break;
+      }
+      case 'X': {
         if (s[j - 1] == 'I') {
           sum += 9;
           j -= 2;
@@ -24,7 +29,9 @@ int romanToInt(string s) {
           sum += 10;
           j--;
         }
-      } else if (s[j] == 'L') {
+        break;
+      }
+      case 'L': {
         if (s[j - 1] == 'X') {
           sum += 40;
           j -= 2;
@@ -32,7 +39,9 @@ int romanToInt(string s) {
           sum += 50;
           j--;
         }
-      } else if (s[j] == 'C') {
+        break;
+      }
+      case 'C': {
         if (s[j - 1] == 'X') {
           sum += 90;
           j -= 2;
@@ -40,7 +49,9 @@ int romanToInt(string s) {
           sum += 100;
           j--;
         }
-      } else if (s[j] == 'D') {
+        break;
+      }
+      case 'D': {
         if (s[j - 1] == 'C') {
           sum += 400;
           j -= 2;
@@ -48,7 +59,9 @@ int romanToInt(string s) {
           sum += 500;
           j--;
         }
-      } else {
+        break;
+      }
+      case 'M': {
         if (s[j - 1] == 'C') {
           sum += 900;
           j -= 2;
@@ -57,21 +70,38 @@ int romanToInt(string s) {
           j--;
         }
       }
+      }
     } else {
-      if (s[j] == 'I')
+      switch (s[j]) {
+      case 'I': {
         sum += 1;
-      if (s[j] == 'V')
+        break;
+      }
+      case 'V': {
         sum += 5;
-      if (s[j] == 'X')
+        break;
+      }
+      case 'X': {
         sum += 10;
-      if (s[j] == 'L')
+        break;
+      }
+      case 'L': {
         sum += 50;
-      if (s[j] == 'C')
+        break;
+      }
+      case 'C': {
         sum += 100;
-      if (s[j] == 'D')
+        break;
+      }
+      case 'D': {
         sum += 500;
-      if (s[j] == 'M')
+        break;
+      }
+      case 'M': {
         sum += 1000;
+        break;
+      }
+      }
       j--;
     }
   }
@@ -79,7 +109,7 @@ int romanToInt(string s) {
   return sum;
 }
 int main() {
-  string s = "XC";
+  string s = "MCDIX";
   cout << s << " in Roman is: " << romanToInt(s) << endl;
   return 0;
 }
